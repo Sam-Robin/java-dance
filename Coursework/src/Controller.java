@@ -34,9 +34,14 @@ public class Controller {
 		this.runningOrder = new ArrayList<>();
 		
 		//set the lists
-		dances = 		readFromFiles(dances, "C:\\Users\\Sam\\git\\java-dance\\Coursework\\src\\danceShowData_dances.csv");
-		danceGroups = 	readFromFiles(danceGroups, "C:\\Users\\Sam\\git\\java-dance\\Coursework\\src\\danceShowData_danceGroups.csv");
-		runningOrder = 	readFromFiles(runningOrder, "C:\\Users\\Sam\\git\\java-dance\\Coursework\\src\\danceShowData_runningOrder.csv");
+		//use a relative path to find the files
+		String pathToProject = new File("").getAbsolutePath();
+		String filePath = pathToProject + "\\Coursework\\bin\\danceShowData_dances.csv";
+		dances = 		readFromFiles(dances, filePath);
+		filePath = pathToProject + "\\Coursework\\bin\\danceShowData_danceGroups.csv";
+		danceGroups = 	readFromFiles(danceGroups, filePath);
+		filePath = pathToProject + "\\Coursework\\bin\\danceShowData_runningOrder.csv";
+		runningOrder = 	readFromFiles(runningOrder, filePath);
 		
 		//output lists to the console
 		System.out.println("--DANCES--");
