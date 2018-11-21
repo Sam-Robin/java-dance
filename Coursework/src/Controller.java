@@ -66,6 +66,16 @@ public class Controller {
 	 * @return the name of all performers that are in the specified dance. 
 	 */
 	public String listAllDancersIn(String dance) {
+		//Go through each element of the dances list
+		for (String s : dances) {
+			//If the dance is within the element...
+			if(s.contains(dance)) {
+				//Output only the dancers in the specified dance
+				String output = s.replace(dance, "");
+				return output;
+			}
+		}
+		//Return null if the dance isn't found
 		return null;
 	}
 	
